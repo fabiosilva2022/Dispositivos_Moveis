@@ -23,14 +23,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.myapplicationii.R
+import com.example.myapplicationii.viewmodel.AuthViewModel
 
 @Composable
-fun LoginScreen(navController: NavHostController) {
-    var usuario by remember { mutableStateOf(value = "")}
-    var senha by remember { mutableStateOf(value = "")}
+fun LoginScreen(
+    navController: NavHostController)
+{
+    var authViewModel = hiltViewModel<AuthViewModel>()
+    var usuario by remember { mutableStateOf("")}
+    var senha by remember { mutableStateOf("")}
+    var error by remember { mutableStateOf("")
+
+    }
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -68,6 +76,15 @@ fun LoginScreen(navController: NavHostController) {
 
             Button(
                 onClick = {
+                          authViewModel.login(
+                              usuario,
+                              senha,
+                              onSuccess = {
+                                  navController.navigate("minha_conta")},
+                              onError = {messege ->
+                                  error = messege}
+                              }
+                          )
                 },
                 modifier = Modifier
                     .padding(top = 24.dp)
