@@ -82,8 +82,8 @@ fun LoginScreen(
                               onSuccess = {
                                   navController.navigate("minha_conta")},
                               onError = {messege ->
-                                  error = messege}
-                              }
+                                  error = messege},
+
                           )
                 },
                 modifier = Modifier
