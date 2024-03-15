@@ -10,10 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.composeintroduoaula.ui.MinhaContaScreen
-import com.example.myapplicationii.ui.theme.InicioScreen
-import com.example.myapplicationii.ui.theme.LoginScreen
-import com.example.myapplicationii.ui.theme.MyApplicationIITheme
+import com.example.myapplicationii.ui.theme.Screen.MinhaContaScreen
+import com.example.myapplicationii.ui.theme.Screen.InicioScreen
+import com.example.myapplicationii.ui.theme.Screen.L2Screen
+import com.example.myapplicationii.ui.theme.Screen.LoginScreen
+import com.example.myapplicationii.ui.theme.Theme.MyApplicationIITheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,6 +38,9 @@ class MainActivity : ComponentActivity() {
                         }
                         composable("login"){
                             LoginScreen(navController)
+                        }
+                        composable("login"){
+                            L2Screen(navController)
                         }
                         composable("minhaconta"){
                             MinhaContaScreen(navController)

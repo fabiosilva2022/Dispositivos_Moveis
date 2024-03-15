@@ -5,6 +5,18 @@
       <entry key="InicioScreen">
         <State />
       </entry>
+      <entry key="InicioScreenPreview">
+        <State />
+      </entry>
+      <entry key="L2ScreenPreview">
+        <State />
+      </entry>
+      <entry key="LoginScreenPreview">
+        <State />
+      </entry>
+      <entry key="MainActivity">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>

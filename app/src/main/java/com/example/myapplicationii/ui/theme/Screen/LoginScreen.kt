@@ -1,4 +1,4 @@
-package com.example.myapplicationii.ui.theme
+package com.example.myapplicationii.ui.theme.Screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -27,18 +27,17 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.myapplicationii.R
+import com.example.myapplicationii.ui.theme.Theme.MyApplicationIITheme
 import com.example.myapplicationii.viewmodel.AuthViewModel
 
+
 @Composable
-fun LoginScreen(
-    navController: NavHostController)
+fun LoginScreen(navController: NavHostController)
 {
-    var authViewModel = hiltViewModel<AuthViewModel>()
+    val authViewModel = hiltViewModel<AuthViewModel>()
     var usuario by remember { mutableStateOf("")}
     var senha by remember { mutableStateOf("")}
-    var error by remember { mutableStateOf("")
-
-    }
+    var error by remember { mutableStateOf("")}
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -99,7 +98,7 @@ fun LoginScreen(
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
-    MaterialTheme  {
+    MaterialTheme {
         LoginScreen(rememberNavController())
     }
 }

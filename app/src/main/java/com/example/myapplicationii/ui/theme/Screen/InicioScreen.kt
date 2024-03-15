@@ -1,4 +1,4 @@
-package com.example.myapplicationii.ui.theme
+package com.example.myapplicationii.ui.theme.Screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
